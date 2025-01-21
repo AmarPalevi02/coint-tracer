@@ -10,4 +10,9 @@
 .dark {
   --background-color: #1e1e1e;
   --text-color: #ffffff;
+  --shadow-dark: #222223
+}
+
+.shadow-dark {
+  background-color: var(--shadow-dark);
 }

@@ -17,9 +17,14 @@ const ToggleTheme = () => {
    return (
       <button
          onClick={toggleValidation}
-         className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-all"
+         className="p w-12 flex items-center justify-between rounded-full bg-gray-200 shadow-dark transition-all duration-300"
       >
-         {isToggle ? '🌙' : '🌞'}
+         <span
+            className={`transform transition-all duration-300 ${isToggle ? "translate-x-5" : "translate-x-0"
+               }`}
+         >
+            {isToggle ? "🌙" : "🌞"}
+         </span>
       </button>
    )
 }

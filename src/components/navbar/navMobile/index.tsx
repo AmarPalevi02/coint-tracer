@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { logo } from '../../../assets'
-import Toggle from './toggle';
 import Menu from './Menu';
+import Toggle from './Toggle';
 
 const NavMobile = () => {
    const [isOpen, setIsOpen] = useState<boolean>(false)

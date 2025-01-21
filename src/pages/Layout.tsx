@@ -1,8 +1,9 @@
 import NavMobile from "../components/navbar/navMobile"
+import { darkkMode } from "../style"
 
 const Layout = () => {
    return (
-      <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+      <div className={`min-h-screen bg-white text-black ${darkkMode.bgDark}`}>
          <NavMobile />
          <div className="p-4">
 
