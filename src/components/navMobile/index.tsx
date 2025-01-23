@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { logo } from '../../../assets'
+import { logo } from '../../assets'
 import Menu from './Menu';
 import Toggle from './Toggle';
 

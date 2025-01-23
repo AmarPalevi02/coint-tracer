@@ -1,4 +1,4 @@
-import ToggleTheme from "../../theme/ToggleTheme"
+import ToggleTheme from "../theme/ToggleTheme"
 
 const MenuItems = () => {
    return (

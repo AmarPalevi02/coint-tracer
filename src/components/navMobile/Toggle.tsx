@@ -1,5 +1,5 @@
 import { RiMenu2Fill } from "react-icons/ri";
-import { darkkMode } from "../../../style";
+import { darkkMode } from "../../style";
 import { IoIosSearch } from "react-icons/io";
 
 interface ToggleProps {
