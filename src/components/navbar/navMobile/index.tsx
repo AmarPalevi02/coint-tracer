@@ -6,7 +6,7 @@ import Toggle from './Toggle';
 const NavMobile = () => {
    const [isOpen, setIsOpen] = useState<boolean>(false)
    return (
-      <nav className="w-full py-4 px-4 flex justify-between items-center">
+      <nav className="w-full py-4 px-4 flex justify-between items-center md:px-6 md:py-6">
          <img
             src={logo}
             alt="logo"

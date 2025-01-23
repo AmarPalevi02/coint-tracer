@@ -8,8 +8,8 @@ const TopSide = ({ setIsOpen }: MenuProps) => {
    const [serchActive, setSerchActive] = useState<boolean>(false)
 
    return (
-      <div className="flex items-center justify-between py-5 px-4 ">
-         <div className="flex  items-center gap-2 ">
+      <div className="flex items-center justify-between py-5 px-4 md:justify-end">
+         <div className="flex  items-center gap-2 md:hidden">
             <IoIosSearch className="text-2xl font-bold" />
             <Search
                className="w-full rounded-md bg-gray-100 dark:bg-[#222223]  border-none focus:ring-0 focus:outline-none font-semibold"
@@ -20,7 +20,7 @@ const TopSide = ({ setIsOpen }: MenuProps) => {
 
          {serchActive ? (
             <p
-               className="text-lg font-bold text-green-600 hover:underline"
+               className="text-lg font-bold text-green-600 hover:underline md:hidden"
                onClick={() => {
                   setSerchActive(false)
                }}
@@ -35,7 +35,7 @@ const TopSide = ({ setIsOpen }: MenuProps) => {
                <IoClose />
             </button>
          )}
-      </div >
+      </div>
    )
 }
 
