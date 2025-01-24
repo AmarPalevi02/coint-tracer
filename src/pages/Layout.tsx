@@ -1,4 +1,5 @@
 import Hero from "../components/hero"
+import ListMarket from "../components/listmarket"
 import NavMobile from "../components/navMobile"
 import Stats from "../components/stats"
 import { darkkMode } from "../style"
@@ -15,6 +16,7 @@ const Layout = () => {
             </div>
             <div className="px-4 lg:px-8">
                <Stats />
+               <ListMarket />
             </div>
          </div>
       </div>

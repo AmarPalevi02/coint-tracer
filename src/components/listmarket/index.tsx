@@ -1,7 +1,11 @@
-const index = () => {
+import Header from "./Header"
+
+const ListMarket = () => {
    return (
-      <div>index</div>
+      <div className="mt-12 md:mt-24">
+         <Header />
+      </div>
    )
 }
 
-export default index
+export default ListMarket
