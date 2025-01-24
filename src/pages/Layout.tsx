@@ -1,5 +1,6 @@
 import Hero from "../components/hero"
 import NavMobile from "../components/navMobile"
+import Stats from "../components/stats"
 import { darkkMode } from "../style"
 
 const Layout = () => {
@@ -7,10 +8,13 @@ const Layout = () => {
       <div
          className={`min-h-screen bg-white text-black ${darkkMode.bgDark} overflow-x-hidden`}
       >
-         <div className="w-full max-w-[1200px] min-w-[320px] mx-auto">
+         <div className="w-full max-w-[1200px] min-w-[320px] mx-auto pb-5">
             <NavMobile />
             <div className="pl-4">
                <Hero />
+            </div>
+            <div className="px-4 lg:px-8">
+               <Stats />
             </div>
          </div>
       </div>

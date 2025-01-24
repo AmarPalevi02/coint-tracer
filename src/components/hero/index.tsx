@@ -5,8 +5,10 @@ const Hero = () => {
       <section className="relative flex flex-col md:flex-row justify-between md:pl-6 md:items-center md:w-full mt-5 md:mt-0">
          <div className="text-start mt-5 mb-4 lg:0">
             <h1 className="text-3xl font-bold lg:text-5xl">Temukan</h1>
-            <h1 className="text-3xl font-bold text-[#01bc8d] my-3 lg:text-5xl">Permata Kripto</h1>
+            <h1 className="text-3xl font-bold text-[#01bc8d] my-2 lg:text-5xl">Permata Kripto</h1>
             <h1 className="text-3xl font-bold lg:text-5xl">Berikutnya di KuCoin</h1>
+
+            <p className="text-sm mt-4 text-gray-400">1 Dari 4 Holder Kripto Di Seluruh Dunia Menggunakan KuCoin</p>
          </div>
 
          <div className={`relative justify-center items-center md:my-0  flex flex-1 lg:mt-0 lg:justify-end`}>
