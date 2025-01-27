@@ -14,7 +14,7 @@ const Layout = () => {
             <div className="pl-4">
                <Hero />
             </div>
-            <div className="px-4 lg:px-8">
+            <div className="px-6 lg:px-8">
                <Stats />
                <ListMarket />
             </div>

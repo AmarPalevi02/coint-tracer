@@ -14,6 +14,7 @@ const ToggleTheme = () => {
 
       setIsToggle(!isToggle)
    }
+   
    return (
       <button
          onClick={toggleValidation}
