@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode} from 'react';
 
 type CardListMarketProps = {
-   title: string
+   title?: string
    children: ReactNode
 }
 
