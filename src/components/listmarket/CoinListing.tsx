@@ -1,36 +1,27 @@
-import { useEffect, useState } from "react"
-import { getDatas } from "../../utils/fetch"
+import { useEffect, useState } from "react";
+import { getDatas } from "../../utils/fetch";
 
-type CointProps = {
-   resource: string;
-   limit?: number;
-   parser?: (data: any) => any[];
-};
+const CoinListing = () => {
+   const [coinListing, setCoinListing] = useState<[]>([])
 
-const Coint = ({ resource, limit = 5, parser }: CointProps) => {
-   const [coins, setCoins] = useState<[]>([]);
-
-
-   const fetchCoins = async () => {
+   const fetchCointListing = async () => {
       try {
-         const response = await getDatas({ resourch: resource });
+         const response = await getDatas({ resourch: 'coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=2' });
 
-         const parsedData = parser ? parser(response.data) : response.data;
-
-         const limitedData = parsedData.slice(0, limit);
-         setCoins(limitedData);
+         const limitedData = response?.data.slice(0, 5)
+         setCoinListing(limitedData)
       } catch (error) {
          console.error("Failed to fetch coins:", error);
       }
-   };
+   }
 
    useEffect(() => {
-      fetchCoins();
-   }, [resource, limit, parser]);
+      fetchCointListing()
+   }, [])
 
    return (
       <div>
-         {coins.map((coin: any, index) => (
+         {coinListing.map((coin: any, index) => (
             <div key={index} className="flex justify-between mb-8">
                <div className="flex items-center gap-2">
                   <img
@@ -46,7 +37,7 @@ const Coint = ({ resource, limit = 5, parser }: CointProps) => {
                <div className="text-end">
                   <p>$ {coin.high_24h || "-"}</p>
                   <div className="text-[#01bc8d]">
-                     {coin.market_cap_change_percentage_24h?.toFixed(2) || "-"}%
+                    + {coin.market_cap_change_percentage_24h?.toFixed(2) || "-"}%
                   </div>
                </div>
             </div>
@@ -55,4 +46,4 @@ const Coint = ({ resource, limit = 5, parser }: CointProps) => {
    )
 }
 
-export default Coint
+export default CoinListing

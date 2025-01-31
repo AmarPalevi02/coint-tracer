@@ -9,7 +9,6 @@ const CoinTrending = () => {
          const response = await getDatas({ resourch: 'search/trending' })
 
          const limitedData = response?.data.coins.slice(0, 5)
-
          setCoinTrending(limitedData)
       } catch (error) {
          console.error("Failed to fetch coins:", error);
@@ -21,27 +20,32 @@ const CoinTrending = () => {
    }, [])
    return (
       <div>
-         {coinTrending.map((coin: any, index) => (
-            <div key={index} className="flex justify-between mb-8">
-               <div className="flex items-center gap-2">
-                  <img
-                     className="w-8 h-8"
-                     src={coin.image || ""}
-                     alt="coin logo"
-                  />
-                  <div>
-                     <p className="text-lg font-semibold">{coin.symbol}</p>
-                     <p className="text-gray-500 text-sm">{coin.name}</p>
+         {coinTrending.map((coin: any, index) => {
+            const coinData = coin.item
+            const market = coin.item.data
+
+            return (
+               <div key={index} className="flex justify-between mb-8">
+                  <div className="flex items-center gap-2">
+                     <img
+                        className="w-8 h-8"
+                        src={coinData.thumb || ""}
+                        alt="coin logo"
+                     />
+                     <div>
+                        <p className="text-lg font-semibold">{coinData.symbol}</p>
+                        <p className="text-gray-500 text-sm">{coinData.name}</p>
+                     </div>
+                  </div>
+                  <div className="text-end">
+                     <p>{market.market_cap || "-"}</p>
+                     <div className="text-[#01bc8d]">
+                       + {coinData.score?.toFixed(2) || "-"}%
+                     </div>
                   </div>
                </div>
-               <div className="text-end">
-                  <p>$ {coin.high_24h || "-"}</p>
-                  <div className="text-[#01bc8d]">
-                     {coin.market_cap_change_percentage_24h?.toFixed(2) || "-"}%
-                  </div>
-               </div>
-            </div>
-         ))}
+            );
+         })}
       </div>
    )
 }

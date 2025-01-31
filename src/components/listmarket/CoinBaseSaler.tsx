@@ -37,7 +37,7 @@ const CoinBaseSaler = () => {
                <div className="text-end">
                   <p>$ {coin.high_24h || "-"}</p>
                   <div className="text-[#01bc8d]">
-                     {coin.market_cap_change_percentage_24h?.toFixed(2) || "-"}%
+                    + {coin.market_cap_change_percentage_24h?.toFixed(2) || "-"}%
                   </div>
                </div>
             </div>
