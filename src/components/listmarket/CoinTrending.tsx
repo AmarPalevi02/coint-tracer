@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { getDatas } from '../../utils/fetch'
+import SkeletonCard from './SkeletonCard'
 
 const CoinTrending = () => {
    const [coinTrending, setCoinTrending] = useState<[]>([])
+   const [isLoading, setIsLoading] = useState<boolean>(true)
 
    const fetchTrending = async () => {
       try {
@@ -12,12 +14,17 @@ const CoinTrending = () => {
          setCoinTrending(limitedData)
       } catch (error) {
          console.error("Failed to fetch coins:", error);
+      } finally {
+         setIsLoading(false);
       }
    }
 
    useEffect(() => {
       fetchTrending()
    }, [])
+
+   if (isLoading) return <SkeletonCard />
+
    return (
       <div>
          {coinTrending.map((coin: any, index) => {
@@ -40,7 +47,7 @@ const CoinTrending = () => {
                   <div className="text-end">
                      <p>{market.market_cap || "-"}</p>
                      <div className="text-[#01bc8d]">
-                       + {coinData.score?.toFixed(2) || "-"}%
+                        + {coinData.score?.toFixed(2) || "-"}%
                      </div>
                   </div>
                </div>
